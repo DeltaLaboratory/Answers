@@ -1,5 +1,6 @@
 """
-Created at Demi-Ad
+Created at 2021-04-11
+Author Demi-Ad
 윤년 판별
 윤년 이란 4의 배수 면서 100의 배수가 아닌 년도 또는 400의 배수인 년도
 """
