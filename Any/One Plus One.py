@@ -8,7 +8,6 @@ import multiprocessing
 class OnePlusOneBase(abc.ABC):
     """
     OnePlusOne Abstract Class
-
     'This Class Have Super Cat Power'
     """
     __repl__ = """OnePlusOne Abstract Class"""
@@ -26,9 +25,7 @@ class OnePlusOneBase(abc.ABC):
 class OnePlusOneImpl(OnePlusOneBase):
     """
     OnePlusOne Implement Class
-
     method : onePlusOne (StaticMethod) -> int
-
     'This Class Have Super Moo Power'
     """
     __repl__ = """OnePlusOne Implement Class"""
@@ -91,17 +88,17 @@ def main() -> None:
     onePlusOne = OnePlusOneImpl()
 
     @timer
-    def firstResult_ASYNCIO():
+    def firstResult_asyncio():
         return asyncio.run(onePlusOne.onePlusOne())
 
     @timer
-    def secondResult_MP():
-        onePlusOne.onePlusOne_MP()
+    def secondResult_multiprocessing():
+        return onePlusOne.onePlusOne_MP()
 
-    firstResult = firstResult_ASYNCIO()
-    secondResult = secondResult_MP()
-    print(f"1+1 ASYNCIO Ver : {firstResult}")
-    print(f"1+1 Multiprocessing Ver : {secondResult}")
+    firstResult = firstResult_asyncio()
+    secondResult = secondResult_multiprocessing()
+    print(f"asyncio Ver : {firstResult}")
+    print(f"Multiprocessing Ver : {secondResult}")
     return
 
 
